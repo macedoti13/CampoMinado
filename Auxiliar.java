@@ -3,28 +3,53 @@
 import java.util.Random;
 
 public class Auxiliar 
-{
+{    
     /**
-     * Cria uma matriz de Strings 10x10, com o símbulo "?" 
+     * Cria uma matriz de Characters 10x10, com o símbulo "?" 
      * em todos os espaços.
      * 
      * @return a mtriz criada.
      */
-    public static String[][] criaCampo()
+    public static char[][] criaCampo()
     {
         int i;
         int j;
-        String[][] campo = new String[10][10];
+        char[][] campo = new char[10][10];
         for (i = 0; i < 10; i += 1)
         {
             for (j = 0; j < 10; j += 1)
             {
-                campo[i][j] = "?"; 
+                campo[i][j] = '_'; 
             }
         }
         
         return campo; 
     }
+    
+    /**
+     * Esse método mostra o campo formatado com numeração de linhas e colunas.
+     * 
+     * @param campo: o tabuleiro do campo.
+     */
+    public static void dump(char[][] campo)
+    {
+        int linha;
+        int coluna;
+    
+        System.out.println("\n                        Colunas");
+        System.out.println("             1   2   3   4   5   6   7   8");
+        for (linha = 8; linha > 0; linha -= 1)
+        {
+            System.out.print("       " + linha + "  ");
+            for (coluna = 1; coluna < 9; coluna += 1)
+            {
+                System.out.print("   " + campo[linha][coluna]);
+            }
+            System.out.println();
+        }
+        System.out.println("\n     Linhas");
+    }
+    
     
     /**
      * Cria uma matriz de inteiros 10x10 com o numero 0 
@@ -57,7 +82,7 @@ public class Auxiliar
      * 
      * @param minas: o tabuleiro das minas.
      */
-    public void implantaMinas(int[][] minas)
+    public static void implantaMinas(int[][] minas)
     {
         Random random = new Random();
         boolean ocupado;
@@ -90,7 +115,7 @@ public class Auxiliar
      * 
      * @param minas: o tabuleiro das minas.
      */
-    public void preencheCampo(int[][] minas)
+    public static void preencheCampo(int[][] minas)
     {
         int i;
         int j;
@@ -127,7 +152,7 @@ public class Auxiliar
      * 
      * @param campo: o tabuleiro do campo.
      */
-    public boolean vitoria(String[][] campo)
+    public static boolean vitoria(char[][] campo)
     {
         int linha;
         int coluna;
@@ -139,7 +164,7 @@ public class Auxiliar
         {
             for (coluna = 1; coluna < 9; coluna += 1)
             {
-                if (campo[linha][coluna] == "?" )
+                if (campo[linha][coluna] == '?')
                 {
                     contagem += 1;
                 }   
@@ -154,29 +179,5 @@ public class Auxiliar
         {
             return false;
         }
-    }
-    
-    /**
-     * Esse método mostra o campo formatado com numeração de linhas e colunas.
-     * 
-     * @param caampo: o tabuleiro do campo.
-     */
-    public void MostraCampoFormatado(String[][] campo)
-    {
-        int linha;
-        int coluna;
-    
-        System.out.println("\n                     Colunas");
-        System.out.println("            1   2   3   4   5   6   7   8");
-        for (linha = 8; linha > 0; linha -= 1)
-        {
-            System.out.print("       " + linha + "  ");
-            for (coluna = 1; coluna < 9; coluna += 1)
-            {
-                System.out.print("   " + campo[linha][coluna]);
-            }
-            System.out.println();
-        }
-        System.out.println("\n     Linhas");
     }
 } 
