@@ -155,4 +155,28 @@ public class Auxiliar
             return false;
         }
     }
+    
+    /**
+     * Esse método mostra o campo formatado com numeração de linhas e colunas.
+     * 
+     * @param caampo: o tabuleiro do campo.
+     */
+    public void MostraCampoFormatado(String[][] campo)
+    {
+        int linha;
+        int coluna;
+    
+        System.out.println("\n                     Colunas");
+        System.out.println("            1   2   3   4   5   6   7   8");
+        for (linha = 8; linha > 0; linha -= 1)
+        {
+            System.out.print("       " + linha + "  ");
+            for (coluna = 1; coluna < 9; coluna += 1)
+            {
+                System.out.print("   " + campo[linha][coluna]);
+            }
+            System.out.println();
+        }
+        System.out.println("\n     Linhas");
+    }
 } 
