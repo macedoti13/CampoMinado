@@ -86,28 +86,30 @@ public class Auxiliar
     {
         Random random = new Random();
         boolean ocupado;
+        int linha; 
+        int coluna;
         int i;
-        int j;
-        for (i = 0; i < 10; i += 1)
+        for(i=0 ; i<10 ; i += 1)
         {
-            do {
-                i = random.nextInt(8) + 1;
-                j = random.nextInt(8) + 1;
+            do{
+                linha = random.nextInt(8) + 1;
+                coluna = random.nextInt(8) + 1;
                 
-                if (minas[i][j] == -1)
+                if(minas[linha][coluna] == -1)
                 {
                     ocupado = true;
-                }
+                }    
                 else
                 {
                     ocupado = false;
                 }
-                
+    
             } while(ocupado);
             
-            minas[i][j] = -1; 
+            minas[linha][coluna] = -1;
         }
     }
+
     
     /**
      * Esse método atribui o valor nos campos em que não tem minas, 

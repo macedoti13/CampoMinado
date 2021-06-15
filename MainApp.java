@@ -26,19 +26,19 @@ public class MainApp
         {
             Auxiliar.dump(campo);
             
-            System.out.println(" Informe o valor da linha (entre 1 e 8): ");
+            System.out.print(" Informe o valor da linha (entre 1 e 8): ");
             linha = teclado.nextInt();
             while (!(linha > 0 && linha < 9))
             {
-                System.out.println(" Informe uma linha válida! (entre 1 e 8): ");
+                System.out.print(" Informe uma linha válida! (entre 1 e 8): ");
                 linha = teclado.nextInt();
             }
             
-            System.out.println(" Informe o valor da coluna (entre 1 e 8): ");
+            System.out.print(" Informe o valor da coluna (entre 1 e 8): ");
             coluna = teclado.nextInt();
             while (!(coluna > 0 && coluna < 9))
             {
-                System.out.println(" Informe uma coluna válida! (entre 1 e 8): ");
+                System.out.print(" Informe uma coluna válida! (entre 1 e 8): ");
                 coluna = teclado.nextInt();
             }
             
