@@ -26,28 +26,40 @@ public class MainApp
         {
             Auxiliar.dump(campo);
             
-            System.out.print(" Informe o valor da linha (entre 1 e 8): ");
+            System.out.print("\nInforme o valor da linha (entre 1 e 8): ");
             linha = teclado.nextInt();
             while (!(linha > 0 && linha < 9))
             {
-                System.out.print(" Informe uma linha válida! (entre 1 e 8): ");
+                System.out.print("\nInforme uma linha válida! (entre 1 e 8): ");
                 linha = teclado.nextInt();
             }
             
-            System.out.print(" Informe o valor da coluna (entre 1 e 8): ");
+            System.out.print("\nInforme o valor da coluna (entre 1 e 8): ");
             coluna = teclado.nextInt();
             while (!(coluna > 0 && coluna < 9))
             {
-                System.out.print(" Informe uma coluna válida! (entre 1 e 8): ");
+                System.out.print("\nInforme uma coluna válida! (entre 1 e 8): ");
                 coluna = teclado.nextInt();
             }
             
             if (campo[linha][coluna] != '_')
             {
-                System.out.println("Esse campo ja está aberto");
+                System.out.println("\nEsse campo ja está aberto, tente outro:");
                 continue;
             }
-    
+            else
+            {
+                if (minas[linha][coluna] == -1)
+                {
+                    System.out.println("\nOPS, havia uma mina ali, você perdeu!");
+                    Auxiliar.mostrarMinas(minas);
+                    break;
+                }
+                else 
+                {
+                    continue;
+                }
+            }
         } while (!Auxiliar.vitoria(campo));
         
         System.out.println("FIM DE JOGO!!");
