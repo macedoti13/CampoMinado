@@ -214,22 +214,4 @@ public class Auxiliar
         }
         System.out.println("\n     Linhas");
     }
-    
-    /**
-     * 
-     * 
-     */
-    public static int mostraDica(int[][] minas, int linha, int coluna)
-    {    
-        return minas[linha][coluna];
-    }
-    
-    /**
-     * 
-     * 
-     */
-    public static void mostrarVizinhas()
-    {   
-        
-    }   
 }
