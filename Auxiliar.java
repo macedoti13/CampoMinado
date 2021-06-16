@@ -220,4 +220,30 @@ public class Auxiliar
         }
         System.out.println("\n     Linhas");
     }
+    
+    /**
+     * Esse método mostra as casas próximas a casa em que o jogador
+     * efetuou a jogada.
+     * 
+     * @param minas: o tabuleiro das minas.
+     * @param campo: o tabuleiro do campo.
+     * @param linha: inteiro informado pelo usuário.
+     * @param coluna: inteiro informado pelo usuário.
+     * 
+     */
+    public static void mostrarDicas(int[][] minas, char[][] campo, int linha, int coluna)
+    {
+        int i;
+        int j;
+        for(i = -1 ; i<2 ; i += 1)
+        {
+            for(j=-1 ; j<2 ; j += 1)
+            {
+                if((minas[linha+i][coluna+j] != -1) && (linha != 0 && linha != 9 && coluna != 0 && coluna != 9))
+                {
+                    campo[linha+i][coluna+j] = Character.forDigit(minas[linha+i][coluna+j], 10);
+                }
+            }
+        }
+    }
 }
