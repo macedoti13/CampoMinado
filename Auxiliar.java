@@ -1,7 +1,9 @@
 //Direitos Autorais, PUCRS/Escola Politécnica
 
 import java.util.Random;
-
+/**
+ * 
+ */
 public class Auxiliar
 {
     /**
@@ -9,6 +11,7 @@ public class Auxiliar
      * em todos os espaços.
      *
      * @return a mtriz criada.
+     * 
      */
     public static char[][] criaCampo()
     {
@@ -30,6 +33,7 @@ public class Auxiliar
      * Esse método mostra o campo formatado com numeração de linhas e colunas.
      *
      * @param campo: o tabuleiro do campo.
+     * 
      */
     public static void dump(char[][] campo)
     {
@@ -80,6 +84,7 @@ public class Auxiliar
      * Esses valores representam as minas.
      *
      * @param minas: o tabuleiro das minas.
+     * 
      */
     public static void implantaMinas(int[][] minas)
     {
@@ -115,6 +120,7 @@ public class Auxiliar
      * a quantidade de minas próximas a ele.
      *
      * @param minas: o tabuleiro das minas.
+     * 
      */
     public static void preencheCampo(int[][] minas)
     {
@@ -152,6 +158,7 @@ public class Auxiliar
      * Se a contagem for 10, é porque só restam as 10 bombas no tabuleiro.
      *
      * @param campo: o tabuleiro do campo.
+     * 
      */
     public static boolean vitoria(char[][] campo)
     {
@@ -207,4 +214,22 @@ public class Auxiliar
         }
         System.out.println("\n     Linhas");
     }
+    
+    /**
+     * 
+     * 
+     */
+    public static int mostraDica(int[][] minas, int linha, int coluna)
+    {    
+        return minas[linha][coluna];
+    }
+    
+    /**
+     * 
+     * 
+     */
+    public static void mostrarVizinhas()
+    {   
+        
+    }   
 }

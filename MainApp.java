@@ -1,18 +1,21 @@
 //Direitos Autorais, PUCRS/Escola Politécnica
-
 import java.util.Scanner;
 
 /**
+ * Escreva a descrição da classe Teste aqui.
  * 
+ * @author (seu nome) 
+ * @version (número de versão ou data)
  */
 public class MainApp
 {
     public static void main(String[] args)
     {
         char[][] campo;
-        int[][] minas;
+        int [][] minas;
         int linha;
         int coluna;
+        int rodada;
         Scanner teclado;
         
         campo = Auxiliar.criaCampo();
@@ -20,49 +23,35 @@ public class MainApp
         Auxiliar.implantaMinas(minas);
         Auxiliar.preencheCampo(minas);
         teclado = new Scanner(System.in);
+        rodada = 0;
         
-        System.out.println("Campo Minado!/n");
+        System.out.println("CAMPO MINADO!!");
         do
         {
+            rodada += 1;
+            System.out.println("\nRodada: " + rodada);
             Auxiliar.dump(campo);
             
-            System.out.print("\nInforme o valor da linha (entre 1 e 8): ");
-            linha = teclado.nextInt();
-            while (!(linha > 0 && linha < 9))
+            do 
             {
-                System.out.print("\nInforme uma linha válida! (entre 1 e 8): ");
+                System.out.print("\nLinha: ");
                 linha = teclado.nextInt();
-            }
-            
-            System.out.print("\nInforme o valor da coluna (entre 1 e 8): ");
-            coluna = teclado.nextInt();
-            while (!(coluna > 0 && coluna < 9))
-            {
-                System.out.print("\nInforme uma coluna válida! (entre 1 e 8): ");
+                
+                System.out.print("Coluna: ");
                 coluna = teclado.nextInt();
-            }
+                
+                if ((campo[linha][coluna] != '_') && ((linha < 9 && linha > 0) && (coluna < 9 && coluna > 0)))
+                {
+                    System.out.println("Esse campo já está sendo mostardo");
+                }
+                else if (linha < 1 || linha > 8 || coluna < 1 || coluna > 8)
+                {
+                    System.out.println("Campo inválido, digite números entre 1 e 8");
+                }
+                
+                
+            } while((linha < 1 && linha > 8) && (coluna < 1 && coluna > 8) || (campo[linha][coluna] != '_'));
             
-            if (campo[linha][coluna] != '_')
-            {
-                System.out.println("\nEsse campo ja está aberto, tente outro:");
-                continue;
-            }
-            else
-            {
-                if (minas[linha][coluna] == -1)
-                {
-                    System.out.println("\nOPS, havia uma mina ali, você perdeu!");
-                    Auxiliar.mostrarMinas(minas);
-                    break;
-                }
-                else 
-                {
-                    continue;
-                }
-            }
-        } while (!Auxiliar.vitoria(campo));
-        
-        System.out.println("FIM DE JOGO!!");
-        teclado.close();
+        } while(!Auxiliar.vitoria(campo));
     }
 }
