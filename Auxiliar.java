@@ -1,7 +1,13 @@
 //Direitos Autorais, PUCRS/Escola Politécnica
-
 import java.util.Random;
+
 /**
+ * A classe {@code Auxilixar} contém diversos subprogramas utilazados pela classe
+ * MainApp, que possobilitam a execução do jogo Campo minado.
+ * 
+ * @author Thiago Macedo (t.macedo@edu.pucrs.br)
+ * 
+ * @version 2021-06-16
  * 
  */
 public class Auxiliar
