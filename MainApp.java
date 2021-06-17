@@ -63,8 +63,9 @@ public class MainApp
                 {
                     System.out.println("\nOps, havia uma mina ali!");
                     System.out.println("Voce perdeu!");
-                    System.out.println("As minas são representadas por '-1'");
-                    Auxiliar.mostrarMinas(minas);
+                    System.out.println("As minas são representadas por '*'");
+                    Auxiliar.mostrarMinas(minas, campo);
+                    Auxiliar.dump(campo);
                     break;
                 }
                 else

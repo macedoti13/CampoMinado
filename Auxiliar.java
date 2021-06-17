@@ -4,11 +4,11 @@ import java.util.Random;
 /**
  * A classe {@code Auxilixar} contém diversos subprogramas utilazados pela classe
  * MainApp, que possobilitam a execução do jogo Campo minado.
- * 
+ *
  * @author Thiago Macedo (t.macedo@edu.pucrs.br)
- * 
+ *
  * @version 2021-06-16
- * 
+ *
  */
 public class Auxiliar
 {
@@ -17,7 +17,7 @@ public class Auxiliar
      * em todos os espaços.
      *
      * @return a mtriz criada.
-     * 
+     *
      */
     public static char[][] criaCampo()
     {
@@ -39,7 +39,7 @@ public class Auxiliar
      * Esse método mostra o campo formatado com numeração de linhas e colunas.
      *
      * @param campo: o tabuleiro do campo.
-     * 
+     *
      */
     public static void dump(char[][] campo)
     {
@@ -90,7 +90,7 @@ public class Auxiliar
      * Esses valores representam as minas.
      *
      * @param minas: o tabuleiro das minas.
-     * 
+     *
      */
     public static void implantaMinas(int[][] minas)
     {
@@ -126,7 +126,7 @@ public class Auxiliar
      * a quantidade de minas próximas a ele.
      *
      * @param minas: o tabuleiro das minas.
-     * 
+     *
      */
     public static void preencheCampo(int[][] minas)
     {
@@ -164,7 +164,7 @@ public class Auxiliar
      * Se a contagem for 10, é porque só restam as 10 bombas no tabuleiro.
      *
      * @param campo: o tabuleiro do campo.
-     * 
+     *
      */
     public static boolean vitoria(char[][] campo)
     {
@@ -194,42 +194,41 @@ public class Auxiliar
             return false;
         }
     }
-    
-    /**
-     * Esse método mostra o tabuleiro das minas, caso o jogador
-     * perca a partida.
-     * 
-     * @param minas: o tabuleiro das minas.
-     * 
-     */
-    public static void mostrarMinas(int[][] minas)
-    {
-        int linha;
-        int coluna;
 
-        System.out.println("\n                        Colunas");
-        System.out.println("             1   2   3   4   5   6   7   8");
-        for (linha = 8; linha > 0; linha -= 1)
+    /**
+     * Esse método adciona o caractere '*' em todos os campos do tabuleiro campo, 
+     * onde existe uma mina.
+     *
+     * @param minas: o tabuleiro das minas.
+     * @param campo: o tabuleiro do campo.
+     *
+     */
+    public static void mostrarMinas(int[][] minas, char[][] campo)
+    {
+        int i;
+        int j;
+
+        for (i = 0; i < 9; i += 1)
         {
-            System.out.print("       " + linha + "  ");
-            for (coluna = 1; coluna < 9; coluna += 1)
+            for (j = 0; j < 9; j += 1)
             {
-                System.out.print("   " + minas[linha][coluna]);
+                if(minas[i][j] == -1)
+                {
+                    campo[i][j] = '*';
+                }
             }
-            System.out.println();
         }
-        System.out.println("\n     Linhas");
     }
-    
+
     /**
      * Esse método mostra as casas próximas a casa em que o jogador
      * efetuou a jogada.
-     * 
+     *
      * @param minas: o tabuleiro das minas.
      * @param campo: o tabuleiro do campo.
      * @param linha: inteiro informado pelo usuário.
      * @param coluna: inteiro informado pelo usuário.
-     * 
+     *
      */
     public static void mostrarDicas(int[][] minas, char[][] campo, int linha, int coluna)
     {
