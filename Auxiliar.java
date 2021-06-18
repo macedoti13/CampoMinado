@@ -13,10 +13,10 @@ import java.util.Random;
 public class Auxiliar
 {
     /**
-     * Cria uma matriz de Characters 10x10, com o símbulo "?"
+     * Cria uma matriz de Characters 10x10, com o símbulo "_"
      * em todos os espaços.
      *
-     * @return a mtriz criada.
+     * @return a matriz criada.
      *
      */
     public static char[][] criaCampo()
@@ -61,7 +61,7 @@ public class Auxiliar
     }
 
     /**
-     * Cria uma matriz de inteiros 10x10 com o numero 0
+     * Cria uma matriz de inteiros 10x10 com o numero '0'
      * em todas as casas.
      *
      * @return a matriz criada.
@@ -196,7 +196,7 @@ public class Auxiliar
     }
 
     /**
-     * Esse método adciona o caractere '*' em todos os campos do tabuleiro campo, 
+     * Esse método adciona o caractere '*' em todos os campos do tabuleiro campo,
      * onde existe uma mina.
      *
      * @param minas: o tabuleiro das minas.
