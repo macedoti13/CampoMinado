@@ -7,7 +7,7 @@ import java.util.Random;
  *
  * @author Thiago Macedo (t.macedo@edu.pucrs.br)
  *
- * @version 2021-06-16
+ * @version 2021-06-18
  *
  */
 public class Auxiliar
@@ -85,7 +85,7 @@ public class Auxiliar
 
     /**
      * Sorteia 10 lugares aleatórios na matriz das minas
-     * e coloca insere o valor -1 nesses 10 lugares.
+     * e coloca insere o valor '-1' nesses 10 lugares.
      *
      * Esses valores representam as minas.
      *
@@ -158,7 +158,7 @@ public class Auxiliar
     /**
      * Esse método verifica se o jogador venceu a partida.
      *
-     * Ele cria um contador que cnta a quantidade de casas
+     * Ele cria um contador que conta a quantidade de casas
      * que ainda não foram reveladas.
      *
      * Se a contagem for 10, é porque só restam as 10 bombas no tabuleiro.
@@ -197,7 +197,7 @@ public class Auxiliar
 
     /**
      * Esse método adciona o caractere '*' em todos os campos do tabuleiro campo,
-     * onde existe uma mina.
+     * onde existem minas.
      *
      * @param minas: o tabuleiro das minas.
      * @param campo: o tabuleiro do campo.
