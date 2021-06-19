@@ -6,7 +6,7 @@ import java.util.Scanner;
  * 
  * @author Thiago Macedo (t.macedo@edu.pucrs.br).
  * 
- * @version 2021-06-18
+ * @version 2021-06-19
  * 
  */
 public class MainApp
@@ -28,7 +28,7 @@ public class MainApp
         rodada = 0;
         
         System.out.println("CAMPO MINADO!!!");
-        System.out.println("Tente deixar somente as casas que contem minas!");
+        System.out.println("Revele as casas que contem minas!");
         do 
         {
             Auxiliar.dump(campo);
@@ -61,7 +61,7 @@ public class MainApp
             {
                 if (minas[linha][coluna] == -1)
                 {
-                    System.out.println("\nOps, havia uma mina ali!");
+                    System.out.println("\nOps, havia uma mina alí!");
                     System.out.println("Voce perdeu!");
                     System.out.println("As minas são representadas por '*'");
                     Auxiliar.mostrarMinas(minas, campo);
